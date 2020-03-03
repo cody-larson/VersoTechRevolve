@@ -9,7 +9,8 @@ import Statistics from './Statistics';
 
 const UsingAPI = props => {
 	useEffect(() => {
-		props.fetchSales();
+		const { dispatch } = props;
+		dispatch(fetchSales());
 	}, []);
 
 	return (
@@ -21,8 +22,4 @@ const UsingAPI = props => {
 	);
 };
 
-const mapDispatchToProps = {
-	fetchSales
-};
-
-export default connect(null, mapDispatchToProps)(UsingAPI);
+export default connect()(UsingAPI);
